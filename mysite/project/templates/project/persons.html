@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if persons %}
+    <ul>
+        {% for person in persons %}
+        <li><a href="{% url 'person_page' person.id %}">{{ person.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% if pages_count %}
+        {% for page in pages_count %}
+        <a href="{% url 'persons' page %}">{{ page }}</a>
+        {% endfor %}
+{% endif %}
+</body>
+</html>
